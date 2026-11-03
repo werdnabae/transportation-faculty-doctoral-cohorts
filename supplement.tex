@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{mathptmx,booktabs,graphicx,longtable,microtype}
+\usepackage[authoryear,round]{natbib}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\input{results/numbers.tex}
+\defcitealias{baeAdvises}{Bae, n.d.}
+\title{Supplement S1: Data Definitions, Validation, and Robustness}
+\author{Andrew J. Bae}\date{}
+\begin{document}\maketitle
+\section{Sampling frame and variable definitions}\label{sec:scope}
+The January 2026 public-records roster uses the 2026 US News civil engineering graduate-ranking frame, explicitly identified in Section 3.1 of the published geographic-origins companion \citep{bae2026a}. All 151 ranked institutions were searched. The author confirms that 14 had no transportation faculty meeting the inclusion criteria; 553 faculty records identify 137 institutions. Thus 151 denotes the searched institutional frame, not the number of institutions represented by person records. The supplied institution-frame.csv reports all institutions, ranks, tiers, faculty counts, and search dispositions.
+
+Eligibility required a primary civil or civil-and-environmental engineering appointment and transportation or closely related mobility systems as a primary research/advising emphasis. Only tenure-track, tenured, and emeritus faculty were included; adjunct, research-only, teaching-only, and courtesy-only appointments were excluded. Emeritus faculty are coded as full professors, with no separate status flag. Area listings could include transportation, mobility, infrastructure, urban systems, logistics, automated vehicles, and transit. Classification relied on research themes, group affiliations, and advising as well as departmental labels; uncertain eligibility was excluded under the original protocol \citep{bae2026b}. The scope does not encompass all transportation scholars in planning, geography, policy, or other departments.
+
+CVs had priority over official institutional pages, laboratory pages, and professional profiles unless clearer chronological evidence resolved a conflict. Public visibility, stale or incomplete biographies, and differential survival in the workforce can affect coverage. No repeated roster measures webpage-update rates, workforce turnover, or person-level undercoverage. The institutional search coverage does not establish perfect enumeration of individuals.
+
+Tier boundaries are ranks 1--15, 16--30, 31--60, 61--100, and above 100. Lower tier numbers indicate higher ranking. Nonmatching institutions are not assigned to tier 5. The original mapping is retained across cohorts: it is not an appointment-year ranking or a transportation-specific prestige measure. Dated university announcements match the April 2025 ranking release available at collection, although institutions use edition-year and release-year labels differently; the published companion supplies the explicit 2026 edition designation. Detailed source notes accompany the replication files.
+
+\begin{table}[ht]\centering\small
+\caption{Searched institutions with no transportation faculty identified under the study criteria.}
+\input{results/unrepresented_institutions.tex}
+\end{table}
+
+\section{Classification audit and correction}\label{sec:audit}
+The source faculty file has 384 first-pass language-model labels, 134 labels marked manually verified, and 35 marked verified through the recruitment roster. The author manually consulted public profiles for flagged cases but did not retain individual URLs. These historical method labels do not establish their accuracy. Benchmarks of name-to-gender services document classification errors \citep{santamaria2018}; they do not validate the present language-model workflow. The binary indicator analyzes inferred classification rather than self-identified gender and cannot represent nonbinary identities.
+
+The new source audit used explicit pronoun usage in institutional or professional accounts after matching identity by affiliation or education. Names, photographs, or pronouns belonging to another person on the page were insufficient. Biographical pronouns support this inference without establishing self-identification. Sources accessed during revision do not independently verify January 2026 appointment status.
+
+Audit selection had two stages. First, among original first-pass labels, up to two records were randomly selected in each original F/M label crossed with four doctoral-cohort bins and missing year (19 total; random state 20261029 separately within each stratum). Second, all remaining first-pass records with a known non-US doctoral-training country were selected (17 additional records), followed by two additional records each from China, India, and Iran undergraduate-training groups, using the same seed within each group (six records). Thus the audit contains 42 unique records. Selection uses recorded education locations, not nationality or ethnicity. Full selection code and group fields are supplied; all 18 known non-US doctorate first-pass records are covered when the stages are combined.
+
+Public evidence supported 36 original labels, contradicted one, and left five unresolved. The contradicted first-pass label (faculty ID 311, F to M) was corrected using two institutional accounts, including one published before the roster date. The input dataset preserves the original label; label-corrections.csv and the analysis record the change explicitly. This reduces the count classified female from 121 to \FemaleN{} and changes the 2010--2019 cohort count from 45 to \CohortThreeFemaleN. The cohort decade odds ratio rounds to \CohortOR{} both before and after correction, but rank and tier estimates have been recalculated.
+
+Unresolved cases retain their original labels provisionally; an exclusion analysis gives decade odds ratio \UnresolvedOR. Excluding the entire 42-case audit sample gives 1.68 (1.35--2.09). The sample combines disproportionate random and targeted selection, so neither the observed discordance fraction nor a binomial interval would estimate population accuracy. Small subgroup counts cannot rule out differential errors. Person IDs, original/audited labels, selection stage, education groups, source URLs, short evidence excerpts, and access dates are distributed in gender-audit.csv; label-corrections.csv supplies the correction and corroborating source. These URLs and attribute combinations can identify people despite removal of names.
+
+\section{Models, overlap, and missing data}\label{sec:models}
+Let $F_i=1$ for analysis classification F and $0$ for M, $D_i=(Y_i-2000)/10$ for doctoral completion year $Y_i$, $R_i=0,1,2$ for assistant, associate, and full rank, and $T_i=1,\ldots,5$ for institutional tier. Models use unpenalized logistic maximum likelihood with an intercept: $F\sim D$, $F\sim R$, $F\sim D+R$, $F\sim T$, and $F\sim T+D$. Cohort bins summarize observations; regressions use 518 individual doctoral years, 1962--2025. The revision has no forecast, bootstrap, or permutation model.
+
+Odds ratios and intervals exponentiate coefficients and their Wald bounds. Primary intervals assume independent observations; additional sandwich intervals cluster by current institution. Both are conditional model summaries, not sampling-design intervals for a probability sample, and omit coverage and measurement uncertainty. Wilson intervals in Figure 1 are also conditional on recorded labels. Multiple exploratory comparisons are reported as effect sizes and intervals rather than evidence of an absence of disadvantage.
+
+Rank-only models use both 553 records and the same 518 as the joint model. Replacing ordinal rank with categorical indicators gives full versus assistant odds ratio \FullCategoricalOR. The ordinal versus categorical likelihood-ratio statistic is $0.129$ on one degree of freedom ($p=0.719$). Restricting to 2000--2019 doctorates and adjusting for decade and categorical rank gives full versus assistant odds ratio \OverlapOR{} ($n=306$). These coarse strata leave possible within-decade confounding. The poor rank--cohort overlap makes promotion interpretations inappropriate.
+
+Categorical tier plus year relaxes equal log-odds steps; its likelihood-ratio comparison with ordinal tier plus year is $1.655$ on three degrees of freedom ($p=0.647$). Failure to reject these restrictions does not prove equal steps. The adjusted ordinal-tier upper bound is 1.003, shown with sufficient precision to avoid implying exclusion of 1. Tier-specific counts appear below.
+
+\begin{table}[ht]\centering\small\caption{Current-institution tier composition.}\input{results/tier_shares.tex}\end{table}
+
+Excluding 2020+ doctorates gives decade odds ratio \PreTwentyOR; using only 2000+ doctorates gives \RecentOR. Adding undergraduate-training group (USA, China, India, Iran, other, unknown; China reference) gives \UGAdjustedOR. A USA/other doctoral-training adjustment is also supplied. These are composition controls, not validation of classification accuracy within origins.
+
+Thirty-five doctoral years are missing: two F and 33 M. They are excluded only where year is required, without imputation. For a particular cohort, adding all 33 missing-year M records and no F gives its minimum share; adding both F records and no M gives its maximum. These marginal bounds are calculated separately, not attained simultaneously by one allocation, and are not regression bounds.
+
+\begin{table}[ht]\centering\small\caption{Marginal bounds from missing doctoral years, conditional on gender classifications.}\input{results/missing_year_bounds.tex}\end{table}
+
+\begin{table}[p]\centering\scriptsize
+\caption{All fitted models. CSV output supplies full design-matrix labels; clustered denotes institution-clustered intervals.}
+\resizebox{\textwidth}{!}{\input{results/all_models.tex}}
+\end{table}
+
+\section{Directed classification-error scenarios}\label{sec:errors}
+Scenarios perturb first-pass labels with known doctoral year that remain unsupported by the new audit; they leave all 37 source-supported audited labels, including the corrected case, fixed. Within cohort, doctoral-training (USA/other), or undergraduate-training groups, the budget is the ceiling of 5\% or 10\% of eligible records in that stratum. Actual change counts are reported because rounding changes the aggregate fraction. Eligible M labels before 2010 are switched to F, and F labels from 2010 onward to M, prioritizing years farthest from 2010 and breaking ties by person ID. These choices deliberately weaken the cohort contrast. They are neither a formal maximum-bias optimization nor evidence-calibrated error rates.
+
+An institution-concentrated variant caps total changes at the ceiling of 5\% or 10\% of eligible first-pass records, prioritizes institutions containing the most such records, then distance from 2010 and person ID. The cohort-stratified 5\% scenario changes 19 labels, giving decade odds ratio 1.18 (0.995--1.41). The doctoral-training and undergraduate-training variants change 18 and 20 labels respectively and give intervals including 1. These scenarios establish sensitivity to systematic error, not that those error patterns occurred. The all-audit-sample exclusion row removes observations rather than changing labels.
+\begin{table}[ht]\centering\small\caption{Imposed error scenarios and sample exclusion.}\resizebox{\textwidth}{!}{\input{results/sensitivity.tex}}\end{table}
+
+\section{Withdrawn analyses and verification reconciliation}\label{sec:withdrawn}
+\textbf{First appointments.} A confirmed first appointment would require the earliest documented full-time tenure-track post after doctoral completion, excluding postdoctoral, visiting, lecturer, adjunct, and research-only roles. The source file records a first-hire institution for 150 faculty; 403 lack a separately recorded institution. The original fallback replaced those blanks with current institution. That coding convention is documented by the companion studies but does not confirm earliest appointments. The main article withdraws the comparison and does not use the fallback.
+
+Of the 150 recorded values, 97 match the ranking file. Restricting to these entries gives mean tiers 2.68 (22 F) and 3.51 (75 M), with two-sided Mann--Whitney $p=0.0093$. These are recorded entries, not newly verified employment histories, and heavy documentation/matching selection precludes an inference of hiring advantage. This exploratory check answers the request to remove fallback values; it does not reinstate the claim that first appointments favor women. The coverage table reports availability by gender and doctoral cohort.
+\begin{table}[ht]\centering\small\caption{Separately recorded first-hire institutions; missing counts identify the former fallback cases.}\input{results/first_hire_coverage.tex}\end{table}
+
+\textbf{Advising sample and linkage.} Appendix 10 of \emph{Who Advises Whom? Country-Level Patterns in Advisor--Student Recruitment in US Transportation PhD Training} \citepalias{baeAdvises} documents the 23-program sample: a tie at the 23rd-rank cutoff, with Caltech, Princeton, Stanford, and UC San Diego excluded because they had no transportation-focused faculty within civil engineering. This restores the sampling rationale and named exclusions; the manuscript was submitted for conference presentation only and is not represented as a published validation study.
+
+The gender analysis assigned students to the preceding professor in spreadsheet order within the same institution. A multi-investigator page can violate that convention, and the retained gender files do not preserve source-page structures or verified pairs. The program-selection appendix does not independently validate those assignments. The revision therefore withdraws homophily rather than reporting an unvalidated supervisory association. The earlier wide interval described variation conditional on assignments; neither advisor resampling nor within-program permutations corrected assignment error.
+
+\textbf{Verification counts.} The recruitment workbook has 442 rows including two with no role; the final roster has 125 professors and 315 students. The verification worksheet has 230 rows: 135 initial U abstentions and 95 tentative F/M labels. One U row is marked REPEATED and one M row N. Excluding those nonanalytic entries leaves 228 records: 134 abstentions and 94 tentative labels, of which 88 agree and six differ; two abstentions remain U. The final roster independently has 228 manual-verification method labels. Thus the submitted counts of 226 and 229 are both incorrect for the final analytical set. N is not interpreted as an additional gender category, and that row does not enter retained faculty models. The distributed count files reproduce this reconciliation.
+
+\section{Replication files}\label{sec:replication}
+Run \texttt{python analyze.py} after installing requirements.txt. Inputs are in data-release/; no identifying workbook, network request, or language-model service is required. The script applies the documented label correction, fits all models, and generates tables, numerical macros, CSV/JSON results, and the 600-dpi JPEG figure. Source workbooks remain unchanged. The original and corrected cohort models are both supplied. Audit selection is reproducible from the original labels and training fields using the distributed selection script; source evidence is retained as URLs and short excerpts.
+
+The data dictionary defines every field, model references, missingness handling, and interval method. Original/public source notes distinguish factual provenance from a new audit. The analytical data, audit records, code, and instructions are in the separate Scholastica attachment labeled Replication data and code (\texttt{replication.zip}). Extract the archive and follow \texttt{README.txt}. The \href{https://github.com/werdnabae/transportation-faculty-doctoral-cohorts}{public replication repository} provides the data and code with individual profile links and excerpts removed. These records are potentially identifiable. General reproducibility does not validate historical source completeness or turn inferred classifications into self-identification.
+\bibliographystyle{apalike}\bibliography{paper}
+\end{document}

@@ -1,0 +1,76 @@
+Citation audit completed — October 29, 2026
+
+Result
+Every cited work was identified. No fabricated journal article or mismatched DOI
+was found. Three retained journal references match their canonical published
+versions. One retained source is an undated, unpublished presentation manuscript,
+which is explicitly identified as such rather than presented as a publication.
+
+Canonical published references
+
+1. Bae, A. J. (2026a). Global sources of the U.S. transportation research workforce.
+   Transportation Research Interdisciplinary Perspectives, 38, 102096.
+   https://doi.org/10.1016/j.trip.2026.102096
+   Checked author, title, journal, year, volume, article identifier, and DOI
+   against the publisher-deposited Crossref record and published PDF in Downloads.
+   Claim check: the shared roster and origins analysis are real; Section 3.1
+   explicitly names the 2026 US News edition. The 137/14 institutional accounting
+   comes from the current roster and author clarification, not a claim that the
+   companion article itself correctly tabulates that distinction.
+
+2. Bae, A. J. (2026b). Who hires whom? A case study of prestige stratification in
+   U.S. transportation faculty hiring. Case Studies on Transport Policy, 25, 101885.
+   https://doi.org/10.1016/j.cstp.2026.101885
+   Checked all bibliographic fields against the publisher-deposited Crossref
+   record and published PDF in Downloads. The issue is September 2026; an earlier
+   online/PDF date does not change the citation year. Claim check: the published
+   data-construction sections support the eligibility and source-precedence rules
+   attributed to them. The title is cited as a published article, not a preprint.
+
+3. Santamaría, L., & Mihaljević, H. (2018). Comparison and benchmark of name-to-gender
+   inference services. PeerJ Computer Science, 4, e156.
+   https://doi.org/10.7717/peerj-cs.156
+   Author order, diacritics, title, journal, publication date (July 16, 2018), volume,
+   article identifier, and DOI match the publisher-deposited Crossref record and
+   publisher-indexed PDF. Claim check: the paper benchmarks five name-to-gender
+   inference services and analyzes classification errors. The manuscript now cites
+   it directly for that point, not as validation of this language-model workflow
+   or proof of any person's self-identified gender.
+
+Unpublished source
+
+4. Bae, A. J. (n.d.). Who advises whom? Country-level patterns in advisor–student
+   recruitment in U.S. transportation PhD training. Undated manuscript submitted
+   for presentation only at the 2027 Annual Meeting of the Transportation Research
+   Board, manuscript TRBAM-27-00013, Appendix 10.
+   The local source PDF identifies the title, sole author, presentation-only
+   status, cutoff, and four named exclusions. Its front matter gives no document
+   date. PDF creation metadata is not assigned as a bibliographic publication
+   date, nor is the 2027 meeting year treated as a publication year. No DOI,
+   journal, proceedings publication, or acceptance has been invented.
+
+Corrections made
+- Added structured DOI and canonical DOI-URL fields to the three published BibTeX
+  entries; DOI links also render as clickable links in the bibliography.
+- Preserved author-name diacritics and protected proper-title capitalization.
+- Marked the undated presentation manuscript n.d. and retained unpublished status.
+- Made the shared Bae 2026a/b labels consistent across main text and supplement;
+  the former supplement-only 2026b/c shift has been removed.
+- Removed three unused legacy entries (Holman et al., Sheltzer and Smith, Miller
+  and Wai). All three resolve to genuine publications in Crossref; removal is
+  because they are no longer cited after forecast/homophily claims were withdrawn,
+  not because they were fabricated. Their old entries and metadata are archived.
+- Tightened citation placement so the inference benchmark supports the exact
+  statement for which it is used.
+
+Checks and evidence
+Saved raw Crossref records, the citation ledger, original bibliography snapshots,
+and a verification script are in citation-audit/. The script checks DOI/title/
+author/year/journal/volume/article identifier, use of all retained entries, matching
+main/supplement labels, the unpublished source's status, and rendered n.d. citation.
+Some direct publisher URLs block automated fetches; successful publisher-indexed
+content, publisher-deposited Crossref metadata, and the actual published companion
+PDFs provide the verification. A fetch restriction is not treated as a false DOI.
+
+Rebuilt manuscript and supplement and refreshed standalone upload sources and
+replication package. Statistical estimates and the underlying data are unchanged.

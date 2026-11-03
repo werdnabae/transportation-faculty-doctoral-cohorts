@@ -1,0 +1,31 @@
+Ranking provenance — directly verified in the published companion PDF
+
+Primary source:
+Bae, A.J. (2026). Global sources of the US transportation research workforce.
+Transportation Research Interdisciplinary Perspectives 38,102096.
+https://doi.org/10.1016/j.trip.2026.102096
+Section3.1, program selection, explicitly identifies the2026 edition of
+US News & World Report Best Graduate Schools rankings for civil engineering.
+This is documentary support, not an inference solely from the January2026 date.
+
+Read locally from:
+/Users/abae/Downloads/1-s2.0-S2590198226002617-main.pdf
+The source PDF remains outside the reviewer ZIP; a checksum is saved privately.
+The article's151-institution wording is reconciled in this revision as the
+searched frame:553 person records represent137 institutions; the author confirms
+that14 searched institutions had no eligible transportation faculty.
+
+Independent ranking-release cross-check:
+Illinois ranking history explains that graduate edition years generally follow
+spring release year. The stored leading ranks agree with April2025 announcements:
+Illinois1, Georgia Tech2, UT Austin4, Purdue5. Institutional pages sometimes use
+release-year rather than edition-year labels. The manuscript cites the published
+companion's explicit2026 designation and retains the original mapping unchanged.
+
+https://cee.illinois.edu/about/rankings-history
+https://coe.gatech.edu/news/2025/04/graduate-engineering-program-remains-4th-2025-rankings
+https://engineering.purdue.edu/CCE/AboutUs/News/Features/purdue-civil-engineering-burke-graduate-program-ranking-april-2025
+https://caee.utexas.edu/news/rankings-top-10-yet-again/
+
+All online sources accessed2026-10-29. Spot-checking a release does not independently
+validate every one of the151 supplied institutional ranks. No ranks were replaced.

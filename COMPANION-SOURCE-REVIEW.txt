@@ -1,0 +1,42 @@
+Source provenance for the revised gender-composition paper
+
+Confirmed from specific source documents and author clarification:
+-2026 US News edition: Section3.1 of the published origins paper, TRIP38,102096,
+ DOI10.1016/j.trip.2026.102096. Read the actual PDF in Downloads, not just README.
+-All151 ranking-frame institutions searched; author confirms14 had no eligible
+ transportation faculty;553 person records identify137 institutions.
+-Primary civil/CEE appointment and primary transportation-related research/advising.
+ Only tenure-track, tenured and emeritus; adjunct/research-only/teaching-only and
+ courtesy-only appointments excluded, as confirmed by author.
+-Emeritus coded at full-professor rank: rank-attainment manuscript Data section.
+-CVs before institutional pages, group pages, professional profiles: hiring-prestige
+ camera-ready manuscript Data and sample construction. Related infrastructure,
+ mobility, logistics and urban-system group labels evaluated case by case.
+-Allfive tier cutoffs: hiring-prestige manuscript Prestige tier construction.
+-Original current-institution fallback when First_Hire blank: hiring-prestige text
+ and geographic-origins README. This convention is removed from revised analysis.
+-23-program advising sample: Who Advises Whom Appendix10, TRBAM-27-00013 inDownloads.
+ A tie at23rd-rank cutoff after four named exclusions produced23 programs.
+ It does not independently validate the gender file's listing-order advisor links.
+-Original manual gender checks used public profiles without saved individual links,
+ as confirmed by author. The new42-case source audit supplies separate evidence.
+-Author emailabae@alumni.cmu.edu; ORCID0000-0002-7876-8998, supplied by author.
+
+Workbook lineage cross-check
+Hiring-prestige matches all10 shared non-name faculty columns row for row in the
+gender workbook. Origins matches8 exactly and differs in6first-hire institution
+strings and1undergraduate institution string. These do not add missing histories.
+School/rank/tier values match across the workbooks. Six unused QS-rank cells differ;
+whole-workbook identity is not claimed. No companion workbook was modified.
+
+Source hierarchy
+Documentary protocol establishes collection rules, not independent validation of
+every person's recorded attributes. Public pronoun evidence supports the inferred
+classification audit, not self-identified gender. Ranking provenance is distinct
+from a new audit of all151rank values. Program selection is distinct from link
+validation. The revision maintains all these distinctions.
+
+Detailed ranking and program sources are in RANKING-SOURCE-CHECK.txt and
+PROGRAM-SELECTION-SOURCE.txt. Private checksums identify the two source PDFs and
+original workbooks. Sources remain outside the reviewer ZIP because their detailed
+protocols are summarized and cited, and statistical replication needs only CSVs.

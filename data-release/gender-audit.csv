@@ -1,0 +1,43 @@
+person_id,cohort,Gender,status,evidence_type,checked_on,selection_phase,audited_gender,doctoral_training_country,undergraduate_training_country
+223,2000s,F,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,F,USA,USA
+422,2000s,F,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,F,USA,USA
+171,2000s,M,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,M,USA,USA
+85,2000s,M,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,M,USA,Canada
+53,2010s,F,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,F,USA,Iran
+194,2010s,F,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,F,USA,USA
+9,2010s,M,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,M,USA,Iran
+301,2010s,M,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,M,USA,USA
+388,2020plus,F,unresolved,no explicit evidence retrieved,2026-10-29,initial cohort x original label sample,,Canada,Bangladesh
+164,2020plus,F,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,F,USA,USA
+406,2020plus,M,unresolved,no explicit evidence retrieved,2026-10-29,initial cohort x original label sample,,USA,USA
+160,2020plus,M,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,M,USA,USA
+253,missing,F,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,F,USA,USA
+375,missing,M,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,M,USA,India
+541,missing,M,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,M,,
+395,pre2000,F,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,F,USA,USA
+31,pre2000,F,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,F,USA,
+108,pre2000,M,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,M,USA,USA
+192,pre2000,M,concordant,explicit public pronoun usage,2026-10-29,initial cohort x original label sample,M,USA,USA
+26,2010s,F,concordant,explicit public pronoun usage,2026-10-29,all remaining known non-US doctorate first-pass records,F,France,Italy
+27,2000s,F,concordant,explicit public pronoun usage,2026-10-29,all remaining known non-US doctorate first-pass records,F,Germany,Venezuela
+59,2020plus,M,concordant,explicit public pronoun usage,2026-10-29,all remaining known non-US doctorate first-pass records,M,Switzerland,Switzerland
+65,2010s,M,concordant,explicit public pronoun usage,2026-10-29,all remaining known non-US doctorate first-pass records,M,Canada,Bangladesh
+68,pre2000,M,concordant,explicit public pronoun usage,2026-10-29,all remaining known non-US doctorate first-pass records,M,Canada,Egypt
+72,2010s,M,concordant,explicit public pronoun usage,2026-10-29,all remaining known non-US doctorate first-pass records,M,Canada,Chile
+83,2010s,F,concordant,explicit public pronoun usage,2026-10-29,all remaining known non-US doctorate first-pass records,F,Italy,Italy
+111,2010s,F,concordant,explicit public pronoun usage,2026-10-29,all remaining known non-US doctorate first-pass records,F,Spain,Spain
+183,pre2000,F,concordant,explicit public pronoun usage,2026-10-29,all remaining known non-US doctorate first-pass records,F,Italy,
+217,pre2000,M,concordant,explicit public pronoun usage,2026-10-29,all remaining known non-US doctorate first-pass records,M,England,England
+311,2010s,F,discordant,explicit public pronoun usage,2026-10-29,all remaining known non-US doctorate first-pass records,M,Canada,England
+313,2000s,M,concordant,explicit public pronoun usage,2026-10-29,all remaining known non-US doctorate first-pass records,M,Canada,
+354,pre2000,M,concordant,explicit public pronoun usage,2026-10-29,all remaining known non-US doctorate first-pass records,M,Poland,Poland
+392,pre2000,M,concordant,explicit public pronoun usage,2026-10-29,all remaining known non-US doctorate first-pass records,M,Canada,
+418,2010s,M,unresolved,no explicit evidence retrieved,2026-10-29,all remaining known non-US doctorate first-pass records,,England,USA
+468,pre2000,M,unresolved,no explicit evidence retrieved,2026-10-29,all remaining known non-US doctorate first-pass records,,Israel,Israel
+540,pre2000,M,concordant,explicit public pronoun usage,2026-10-29,all remaining known non-US doctorate first-pass records,M,Japan,Turkey
+393,pre2000,M,concordant,explicit public pronoun usage,2026-10-29,2 randomly selected undergraduate-training China,M,USA,China
+73,2000s,M,concordant,explicit public pronoun usage,2026-10-29,2 randomly selected undergraduate-training China,M,USA,China
+358,pre2000,M,unresolved,no explicit evidence retrieved,2026-10-29,2 randomly selected undergraduate-training India,,USA,India
+345,2010s,F,concordant,explicit public pronoun usage,2026-10-29,2 randomly selected undergraduate-training India,F,USA,India
+335,2010s,M,concordant,explicit public pronoun usage,2026-10-29,2 randomly selected undergraduate-training Iran,M,USA,Iran
+457,2010s,M,concordant,explicit public pronoun usage,2026-10-29,2 randomly selected undergraduate-training Iran,M,USA,Iran

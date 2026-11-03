@@ -1,0 +1,28 @@
+Advising-program selection recovered from a specific companion manuscript
+
+Bae, A.J. Who Advises Whom? Country-Level Patterns in Advisor–Student Recruitment
+in US Transportation PhD Training. Manuscript TRBAM-27-00013, submitted for
+presentation only at the2027 Transportation Research Board Annual Meeting.
+Read locally: /Users/abae/Downloads/TRBAM-27-00013.pdf
+
+Appendix/Section10, Institutions considered and inclusion criteria (printed
+pages16–17), states that a tie at the23rd-rank cutoff produced23 included programs
+after exclusion of California Institute of Technology, Princeton University,
+Stanford University, and University of California San Diego, which had no
+transportation-focused faculty within their civil engineering departments.
+This supports the selection rationale and the four named exclusions.
+
+It does not independently validate the gender analysis's spreadsheet-order
+advisor–student assignments. The revised gender article retains withdrawal of
+homophily rather than treating sample-selection documentation as link validation.
+Section3 dates collection to December2025; Section11 lists destination programs.
+The companion's reported316 pairs should not be conflated with the gender file's
+315 students or treated as a verified one-to-one linkage.
+
+The PDF remains outside the reviewer package; a checksum is recorded privately.
+The supplement cites this as an unpublished conference presentation manuscript.
+
+Bibliographic audit: the manuscript front matter gives no document date, although
+the PDF was created in2026. It is cited as Bae(n.d.), an undated unpublished
+presentation manuscript. The2027 meeting year is not assigned as publication year,
+and no DOI or journal publication is invented.

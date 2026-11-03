@@ -1,0 +1,91 @@
+Findings R1 replication dictionary
+UTF-8 CSV files; empty cells denote missing values. IDs preserve original row
+ordering. Removing names does not guarantee anonymity.
+
+DATA-RELEASE/FACULTY.CSV —553 original faculty records
+person_id: original row number+1, unique.
+institution_id: numeric code of current institution in first-appearance order,
+used for clustering;137 distinct values.
+Rank: Assistant/Associate/Full; emeritus coded Full, no separate status flag.
+PhD_Year: recorded doctoral completion year;35 missing, no baseline imputation.
+Gender: ORIGINAL inferred binary F/M label; not self-identified gender. The input
+preserves all original labels. Analyze.py applies the evidence correction below.
+Gender_Method: historical LLM_firstpass/manual_verified/from_recruitment_verified.
+Original method labels do not establish independently measured accuracy.
+tier: original current-institution ranking tier1..5: ranks1-15,16-30,31-60,61-100,>100.
+training_group: recorded PhD institution country, USA/Other/Unknown.
+UG_training_group: undergraduate institution country, USA/China/India/Iran/Other/
+Unknown; categorical model reference China. Countries are locations of awarding
+institutions, not nationality, ethnicity, citizenship, or individual identity.
+doctoral_training_country,undergraduate_training_country: original education
+country strings, included to reproduce the audit selection.
+first_hire_recorded:1 if original First_Hire nonblank,0 otherwise. Not an
+independent validation of earliest tenure-track employment.
+first_hire_tier: tier if the recorded first-hire institution exactly matches the
+original ranking table; otherwise missing. No current-institution substitution;
+nonmatching institutions are not assigned to tier5.
+
+GENDER-AUDIT.CSV —42 selected first-pass records
+person_id: joins faculty.csv.
+cohort: original selection bins pre2000/2000s/2010s/2020plus/missing.
+Gender: original label, also used in initial random selection.
+audited_gender: F/M when explicit public pronouns support classification; blank
+when unresolved. The one discordant label supplies a correction to analysis.
+status: concordant(36),discordant(1),unresolved(5).
+selection_phase: original19-case cohort-by-label random sample; all remaining17
+known non-US doctorate first-pass cases; two additional records each from China,
+India and Iran undergraduate groups (6). Audit_selection.py reproduces all IDs.
+evidence_type: explicit public pronoun usage or insufficient evidence.
+source_url,evidence_excerpt,checked_on: identity-matched public source, short
+supporting excerpt and access date. URLs identify people. A later accessed page
+is not independent evidence of January2026 appointment status.
+doctoral_training_country,undergraduate_training_country: selection descriptors.
+No population-weighted accuracy estimate is derived from this partly targeted audit.
+
+LABEL-CORRECTIONS.CSV —1 confirmed change
+person_id,Gender,audited_gender: ID311, original F, corrected M.
+source_url,evidence_excerpt,checked_on: primary UIC institutional evidence.
+corroborating_source: second UIC account, predating roster collection.
+Analyze.py computes the revised Gender in memory; source inputs and workbooks
+remain unchanged. The corrected female count is120/553, originally121/553.
+
+INSTITUTION-FRAME.CSV —151 ranked institutions
+School,US_News_Rank,US_News_Tier: original ranking mapping,2026 edition identified
+explicitly in the published geographic-origins study, Section3.1.
+faculty_records: positive at137 institutions; zero at14.
+search_disposition,disposition_basis: author confirms all151 were searched and
+14 had no eligible transportation faculty. Positive counts derive from the roster;
+zero-count explanations derive from author clarification, not a new webpage audit.
+
+RECRUITMENT-VERIFICATION.CSV —228 final worksheet records
+Role: Professor/Student.
+tentative_Gender: initial F/M/U, U denotes abstention.
+Gender_VERIFIED: historical final F/M/U label.
+has_tentative: True for initial F/M.
+matches: True if an initial F/M label matches final F/M; otherwise False.
+The intermediate sheet has230 rows; one REPEATED and one N marker are excluded.
+Final counts:134 abstentions,94 tentative F/M;88 match and6 differ. Two remainU.
+These rows reconcile the withdrawn recruitment analysis; they are not an accuracy
+sample of high-confidence faculty labels or verified advising pairs.
+
+RECRUITMENT-COMPOSITION.CSV —440 role-bearing records
+Role,Gender,Gender_Method: original125 professors and315 students. Two empty-role
+spreadsheet rows omitted. No supervisory links are used in the revised analysis.
+
+KEY OUTPUTS
+results/analysis_faculty.csv: original faculty input plus Gender_original,
+revised Gender and profile_supported. Exactly one label differs from input Gender.
+results/models.csv: non-intercept coefficients; OR,lo,hi,p and n. Decade is
+(PhD_Year-2000)/10. Models are unpenalized logistic maximum likelihood. Wald
+intervals are model-conditional; *_clustered uses institution sandwich uncertainty.
+rank indicators reference Assistant; cohort indicators reference<=1999; tier
+indicators reference1. Doctoral country references Other, undergraduate group China.
+cohort_original_labels explicitly reproduces the pre-correction year association.
+results/classification_sensitivity.csv: imposed adverse-error scenarios, not
+estimated error rates; actual change counts supersede nominal rates. The audit
+sample exclusion row removes observations. All37 audited supported labels stay
+fixed during error scenarios; the5 unresolved cases remain eligible for errors.
+results/missing_year_bounds.csv: separate marginal share bounds, not simultaneous
+allocations or regression bounds.
+results/first_hire_coverage.csv: sum=recorded values,size=total; missing=size-sum.
+results/numbers.tex and other .tex tables: generated from the same results.

@@ -1,0 +1,46 @@
+{
+  "n": 553,
+  "F": 120,
+  "institutions": 137,
+  "year_missing": 35,
+  "year_missing_F": 2,
+  "year_min": 1962.0,
+  "year_max": 2025.0,
+  "first_hire": {
+    "recorded": 150,
+    "missing": 403,
+    "tier_matched": 97,
+    "women_n": 22,
+    "men_n": 75,
+    "women_mean": 2.6818181818181817,
+    "men_mean": 3.506666666666667,
+    "MWU_p": 0.009335597421803829
+  },
+  "categorical_checks": {
+    "rank_equal_steps": {
+      "LR": 0.1294944390051569,
+      "df": 1,
+      "p": 0.7189567987250916
+    },
+    "tier_equal_steps": {
+      "LR": 1.6552588728831097,
+      "df": 3,
+      "p": 0.6469261411911944
+    }
+  },
+  "audit": {
+    "concordant": 36,
+    "unresolved": 5,
+    "discordant": 1
+  },
+  "classification_changes": 1,
+  "F_original": 121,
+  "versions": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scipy": "1.13.1",
+    "statsmodels": "0.14.6",
+    "matplotlib": "3.9.4"
+  }
+}
